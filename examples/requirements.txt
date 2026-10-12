@@ -1,0 +1,4 @@
+# Native MAVSDK asyncio API (validated with 4.0.6).
+mavsdk>=4.0.6,<5
+numpy
+opencv-python
