@@ -61,8 +61,8 @@ async def run():
         print(f"Setting takeoff altitude to {altitude} m")
         await action.set_takeoff_altitude(altitude)
 
-        image_location = Path(__file__).resolve().parents[1] / "images" / "image.jpg"
-        image_location.parent.mkdir(parents=True, exist_ok=True)
+        image_location = Path("images") / "image.png"
+        image_location.mkdir(parents=True, exist_ok=True)
         camera = Video()
         armed = False
         controlling_gimbal = False
