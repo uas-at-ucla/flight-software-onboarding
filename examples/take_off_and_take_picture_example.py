@@ -57,12 +57,12 @@ async def run():
         print("Waiting for a gimbal...")
         gimbal_id = await asyncio.wait_for(first_gimbal_id(gimbal), timeout=10.0)
 
-        altitude = 1.5
+        altitude = 4
         print(f"Setting takeoff altitude to {altitude} m")
         await action.set_takeoff_altitude(altitude)
 
         image_location = Path("images") / "image.png"
-        image_location.mkdir(parents=True, exist_ok=True)
+        image_location.parent.mkdir(parents=True, exist_ok=True)
         camera = Video()
         armed = False
         controlling_gimbal = False
